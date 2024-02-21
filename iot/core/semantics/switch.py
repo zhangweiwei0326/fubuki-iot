@@ -24,21 +24,21 @@ def switch_semantics_model_func(*args) -> FunctionDeviceModel:
 
 @SemanticsGroup.add_model
 class SwitchOnSemanticsModel(SemanticsModel):
-    code = "default01"
-    frm = SemanticsFromEnum.USER
-    topic = 'default/switch'
-    regex = "打开开关"
-    regex_num = 1
-    redirect = SemanticsRedirectEnum.MESSAGE
+    code: str = "default01"
+    frm: SemanticsFromEnum = SemanticsFromEnum.USER
+    topic: str = 'default/switch'
+    regex: str = "打开开关"
+    regex_num: int = 1
+    redirect: SemanticsRedirectEnum = SemanticsRedirectEnum.MESSAGE 
     func: SemanticsFunc = switch_semantics_model_func
 
 
 @SemanticsGroup.add_model
 class SwitchOffSemanticssModel(SemanticsModel):
-    code = "default02"
-    frm = SemanticsFromEnum.USER
-    topic = 'default/switch'
-    regex = "关闭开关"
-    regex_num = 1
-    redirect = SemanticsRedirectEnum.MESSAGE
+    code: str = "default02"
+    frm: SemanticsFromEnum = SemanticsFromEnum.USER
+    topic: str = 'default/switch'
+    regex: str = "关闭开关"
+    regex_num: int = 1
+    redirect: SemanticsRedirectEnum = SemanticsRedirectEnum.MESSAGE
     func: SemanticsFunc = switch_semantics_model_func
