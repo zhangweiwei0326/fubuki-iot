@@ -13,12 +13,12 @@ def dialog_semantics_model_func(*args) -> FunctionDeviceModel:
 
 @SemanticsGroup.add_model
 class DialogSemanticsModel(SemanticsModel):
-    code = "default04"
-    frm = SemanticsFromEnum.USER
-    topic = ''
-    regex = "在吗"
-    regex_num = 1
-    redirect = SemanticsRedirectEnum.ACOUSTICS
+    code: str = "default04"
+    frm: SemanticsFromEnum = SemanticsFromEnum.USER
+    topic: str = ''
+    regex: str = "在吗"
+    regex_num: int = 1
+    redirect: SemanticsRedirectEnum = SemanticsRedirectEnum.ACOUSTICS
     func: SemanticsFunc = dialog_semantics_model_func
 
 
@@ -33,10 +33,10 @@ def complex_dialog_semantics_model_func(*args) -> FunctionDeviceModel:
 
 @SemanticsGroup.add_model
 class ComplexDialogSemanticsModel(SemanticsModel):
-    code = 'default06'
-    frm = SemanticsFromEnum.USER
-    topic = ''
-    regex = "你好"
-    regex_num = 1
-    redirect = SemanticsRedirectEnum.SEMANTICS
+    code: str = 'default06'
+    frm: SemanticsFromEnum = SemanticsFromEnum.USER
+    topic: str = ''
+    regex: str = "你好"
+    regex_num: int = 1
+    redirect: SemanticsRedirectEnum = SemanticsRedirectEnum.SEMANTICS
     func: SemanticsFunc = complex_dialog_semantics_model_func
