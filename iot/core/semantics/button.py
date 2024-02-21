@@ -16,10 +16,10 @@ def button_semantics_model_func(*args) -> UniverseNoticeModel:
 
 @SemanticsGroup.add_model
 class ButtonSemanticsModel(SemanticsModel):
-    code = "default05"
-    frm = SemanticsFromEnum.DEVICE
-    topic = 'self/button'
+    code: str = "default05"
+    frm: SemanticsFromEnum = SemanticsFromEnum.DEVICE
+    topic: str = 'self/button'
     regex: Optional[str] = None
     regex_num: Optional[str] = None
-    redirect = SemanticsRedirectEnum.ACOUSTICS
+    redirect: SemanticsRedirectEnum = SemanticsRedirectEnum.ACOUSTICS
     func: SemanticsFunc = button_semantics_model_func
