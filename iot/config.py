@@ -6,12 +6,12 @@ from dotenv import dotenv_values
 class Config(UserDict):
 
     def load_config(self):
-        self.data = dotenv_values()
+        self.data = dotenv_values('.env')
         if 'RESOURCE_PATH' not in self.data:
             raise KeyError("Config missing: RESOURCE_PATH")
         if 'DEVICE_REC' not in self.data:
             self['DEVICE_REC'] = 'BuiltinRecorder'
-        if 'DEVICE_PLY' not in self.data:
+        if 'DEVICE_PLY' not in self.data: 
             self['DEVICE_PLY'] = 'BuiltinPlayer'
         if 'ASR_PROCESSOR' not in self.data:
             self['ASR_PROCESSOR'] = 'BuiltinAsrProcessor'
