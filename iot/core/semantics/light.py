@@ -31,11 +31,11 @@ def light_semantics_model_func(*args) -> FunctionDeviceModel:
 
 
 @SemanticsGroup.add_model
-class SwitchOnSemanticsModel(SemanticsModel):
-    code = "default03"
-    frm = SemanticsFromEnum.USER
-    topic = 'default/light'
-    regex = "打开(.*)灯"
-    regex_num = 2
-    redirect = SemanticsRedirectEnum.MESSAGE
+class SwitchOnSemanticsModel(SemanticsModel): 
+    code: str = "default03"
+    frm: SemanticsFromEnum = SemanticsFromEnum.USER 
+    topic: str = 'default/light'
+    regex: str = "打开(.*)灯"
+    regex_num: int = 2
+    redirect: SemanticsFromEnum = SemanticsRedirectEnum.MESSAGE
     func: SemanticsFunc = light_semantics_model_func
